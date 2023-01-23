@@ -13,17 +13,21 @@ var interval;
 var both = 0;
 
 // move left function
-function moveLeft() {
+function moveLeft(){
     var left =
     parseInt(window.getComputedStyle(character).getPropertyValue("left"));
-    character.style.left = left - 2 + "px";
+    if(left>0){
+        character.style.left = left - 2 + "px";
+    }
 }
 
 // move right function
-function moveRight() {
+function moveRight(){
     var left =
     parseInt(window.getComputedStyle(character).getPropertyValue("left"));
-    character.style.left = left + 2 + "px";
+    if(left<380){
+        character.style.left = left + 2 + "px";
+    }
 }
 
 document.addEventListener("keydown", event => {
