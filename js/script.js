@@ -8,7 +8,9 @@
  * This function contains all fall game movements
  */
 
-var character = document.getElementById("character")
+var character = document.getElementById("character");
+var interval;
+var both = 0;
 
 // move left function
 function moveLeft() {
@@ -34,4 +36,9 @@ document.addEventListener("keydown", event => {
             interval = setInterval(moveRight, 1);
         }
     }
+});
+
+document.addEventListener("keyup", event => {
+    clearInterval(interval);
+    both=0;
 });
