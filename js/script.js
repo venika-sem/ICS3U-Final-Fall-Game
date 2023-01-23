@@ -53,8 +53,8 @@ document.addEventListener("keyup", event => {
 var block = document.createElement("div");
 var hole = document.createElement("div");
 block.setAttribute("class", "block");
-hole.setAttribute("class", "block");
+hole.setAttribute("class", "hole");
 block.setAttribute("id", "block");
-hole.setAttribute("id", "block");
+hole.setAttribute("id", "hole");
 game.appendChild(block);
 game.appendChild(hole);
