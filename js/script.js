@@ -60,13 +60,13 @@ setInterval(function () {
   var holeLastTop =
     parseInt(window.getComputedStyle(holeLast).getPropertyValue("top"));
   }
-  if (blockLastTop < 400 || counter == 0) {
+  if(blockLastTop<400||counter==0){
     var block = document.createElement("div");
     var hole = document.createElement("div");
     block.setAttribute("class", "block");
     hole.setAttribute("class", "hole");
     block.setAttribute("id", "block"+counter);
-    hole.setAttribute("id", "hole" + counter);
+    hole.setAttribute("id", "hole"+counter);
     block.style.top = blockLastTop + 100 + "px";
     hole.style.top = holeLastTop + 100 + "px";
     var random = Math.floor(Math.random() * 360);
@@ -76,12 +76,12 @@ setInterval(function () {
     currentBlocks.push(counter);
     counter++;
   }
-  for (var i = 0; i < currentBlocks.length; i++) {
+  for(var i = 0; i < currentBlocks.length;i++){
     let current = currentBlocks[i];
     let iblock = document.getElementById("block"+current);
-    let ihole = document.getElementById("hole" + current);
-    let iblockTop =
-    parseFloat(window.getComputedStyle(iblock).getPropertyValue("top"));
+    let ihole = document.getElementById("hole"+current);
+    let iblockTop = parseFloat(window.getComputedStyle(iblock).getPropertyValue("top"));
+    let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue("left"));
     iblock.style.top = iblockTop - 0.5 + "px";
     ihole.style.top = iblockTop - 0.5 + "px";
   }
