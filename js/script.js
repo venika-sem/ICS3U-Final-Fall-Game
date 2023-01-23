@@ -9,6 +9,7 @@
  */
 
 var character = document.getElementById("character");
+var game = document.getElementById("game");
 var interval;
 var both = 0;
 
@@ -46,3 +47,14 @@ document.addEventListener("keyup", event => {
   clearInterval(interval);
   both=0;
 });
+
+
+// Creating blocks and holes
+var block = document.createElement("div");
+var hole = document.createElement("div");
+block.setAttribute("class", "block");
+hole.setAttribute("class", "block");
+block.setAttribute("id", "block");
+hole.setAttribute("id", "block");
+game.appendChild(block);
+game.appendChild(hole);
