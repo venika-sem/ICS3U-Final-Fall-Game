@@ -48,7 +48,6 @@ document.addEventListener("keyup", event => {
   both=0;
 });
 
-
 // Creating blocks and holes
 var block = document.createElement("div");
 var hole = document.createElement("div");
