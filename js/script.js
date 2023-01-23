@@ -8,6 +8,7 @@
  * This function contains all fall game movements
  */
 
+// need these as global variables
 var character = document.getElementById("character");
 var game = document.getElementById("game");
 var interval;
@@ -43,6 +44,7 @@ document.addEventListener("keyup", event => {
   both=0;
 });
 
+// found this code on youtube (source: https://www.youtube.com/watch?v=gX3gSJ43f7I )
 var blocks = setInterval(function(){
 var blockLast = document.getElementById("block"+(counter-1));
 var holeLast = document.getElementById("hole"+(counter-1));
@@ -66,9 +68,14 @@ var holeLast = document.getElementById("hole"+(counter-1));
     currentBlocks.push(counter);
     counter++;
   }
-var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-var characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
-var drop = 0;
+  var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+  var characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+  var drop = 0;
+  if(characterTop <= 0){
+        alert("Game over. Score: "+(counter-9));
+        clearInterval(blocks);
+        location.reload();
+  }
   for(var i = 0; i < currentBlocks.length;i++){
     let current = currentBlocks[i];
     let iblock = document.getElementById("block"+current);
@@ -91,7 +98,7 @@ var drop = 0;
   }
   if(drop==0){
     if(characterTop < 480){
-        character.style.top = characterTop + 2 + "px";
+      character.style.top = characterTop + 2 + "px";
     }
   }else{
     character.style.top = characterTop - 0.5 + "px";
