@@ -23,3 +23,15 @@ function moveRight() {
     parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     character.style.left = left - 2 + "px";
 }
+
+document.addEventListener("keydown", event => {
+    if(both==0){
+        both++;
+        if(event.key==="ArrowLeft"){
+            interval = setInterval(moveLeft, 1);
+        }
+        if(event.key==="ArrowRight"){
+            interval = setInterval(moveRight, 1);
+        }
+    }
+});
