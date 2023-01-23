@@ -59,6 +59,7 @@ setInterval(function () {
   var holeLastTop =
     parseInt(window.getComputedStyle(holeLast).getPropertyValue("top"));
   }
+  if(blockLastTop<400||counter==0){
   var block = document.createElement("div");
   var hole = document.createElement("div");
   block.setAttribute("class", "block");
@@ -72,4 +73,5 @@ setInterval(function () {
   game.appendChild(block);
   game.appendChild(hole);
   counter++;
+  }
 }, 1);
